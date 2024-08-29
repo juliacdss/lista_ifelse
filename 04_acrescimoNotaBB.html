@@ -6,11 +6,16 @@
     */
 
     //ENTRADA
-    const notaLittle = Number(prompt(`Informe a nota do little brother antes de receber ajuda:`));
+    const notaLittleAntes = Number(prompt(`Informe a nota do little brother antes de receber ajuda:`));
+    const notaLittleDepois = Number(prompt(`Informe a nota do little brother depois de receber ajuda:`));
     
     //PROCESSAMENTO
+
+    const fracao = (notaLittleDepois - notaLittleAntes) / 4;
     
     
     //SAÍDA
+    if (notaLittleDepois > notaLittleAntes) {alert(`Parabéns pela ajuda! Seu acréscimo na nota foi ${fracao} pontos`)} 
+    else {alert(`Não aumentou a nota, então não ganhou acréscimos!`)}
 
 </script>
