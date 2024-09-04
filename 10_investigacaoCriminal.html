@@ -1,0 +1,42 @@
+<script>
+    /*
+    PROBLEMA: INVESTIGAÇÃO CRIMINAL
+    Faça um script que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são:
+    - "Telefonou para a vítima?"
+    - "Esteve no local do crime?"
+    - "Mora perto da vítima?"
+    - "Devia para a vítima?"
+    - "Já trabalhou com a vítima?"
+    O script deve no final emitir uma classificação sobre a participação da pessoa no crime. Se a pessoa responder positivamente a 2 questões ela deve ser classificada como "Suspeita", entre 3 e 4 como "Cúmplice" e 5 como "Assassino". Caso contrário, ele será classificado como "Inocente".
+    */
+
+    //ENTRADA
+    const perg1 = prompt(`Telefonou para a vítima?`);
+    const perg2 = prompt(`Esteve no local do crime?`);
+    const perg3 = prompt(`Mora perto da vítima?`);
+    const perg4 = prompt(`Devia para a vítima?`);
+    const perg5 = prompt(`Já trabalhou com a vítima?`);
+
+    //PROCESSAMENTO
+    let respostasPositivas = 0;
+            if (perg1.toLowerCase() === 'sim') respostasPositivas++;
+            if (perg2.toLowerCase() === 'sim') respostasPositivas++;
+            if (perg3.toLowerCase() === 'sim') respostasPositivas++;
+            if (perg4.toLowerCase() === 'sim') respostasPositivas++;
+            if (perg5.toLowerCase() === 'sim') respostasPositivas++;
+
+    //SAÍDA
+
+    let classificacao;
+            if (respostasPositivas === 5) {
+                classificacao = 'Assassino';
+            } else if (respostasPositivas >= 3) {
+                classificacao = 'Cúmplice';
+            } else if (respostasPositivas === 2) {
+                classificacao = 'Suspeita';
+            } else {
+                classificacao = 'Inocente';
+            }
+
+            alert(`${classificacao}`);
+</script>
