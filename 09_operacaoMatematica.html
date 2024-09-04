@@ -8,9 +8,9 @@
     */
 
     //ENTRADA
-    const numero1 = Number(prompt(`Informe o primeiro número:`));
-    const numero2 = Number(prompt(`Informe o segundo número:`));
-    const operacao = prompt(`Qual operação deseja realizar? (Operações básicas: +, -, x e /)`);
+    let numero1 = Number(prompt(`Informe o primeiro número:`));
+    let numero2 = Number(prompt(`Informe o segundo número:`));
+    let operacao = prompt(`Qual operação deseja realizar? (Operações básicas: +, -, x e /)`);
 
     //PROCESSAMENTO
 
@@ -18,21 +18,49 @@
 
     if (operacao == "multiplicação" || operacao == "x") {
         resultado = numero1 * numero2;
+        fraseResultado = `A multiplicação dos números é ${resultado}`;
 
     } else if (operacao == "divisão" || operacao == "/") {
         resultado = numero1 / numero2;
+        fraseResultado = `A divisão dos números é ${resultado}`;
 
-    } if (operacao == "adição" || operacao == "+") {
+    } if (operacao == "adição" || operacao == "+" || operacao == "soma") {
         resultado = numero1 + numero2;
+        fraseResultado = `A soma dos números é ${resultado}`;
 
     } else if (operacao == "subtração" || operacao == "-") {
         resultado = numero1 - numero2;
+        fraseResultado = `A subtração dos números é ${resultado}`
     } 
     else {
         alert(`Operação inválida!`)
     }
 
-    
+    // Teste das condições do resultado da operação (par ou ímpar)
+
+    if (resultado % 2 == 0) {
+        fraseParImpar = `O número é par, `;
+    } else {
+        fraseParImpar = `O número é ímpar, `;
+    }
+
+    //Teste das condições do resultado da operação (positivo ou negativo)
+
+    if (resultado >= 0) {
+        frasePosNeg = `o número é positivo e `
+    } else {
+        frasePosNeg = "o número é negativo e "
+    }
+
+    //Teste das condições do resultado da operação (inteiro ou decimal)
+
+    if (Number.isInteger(resultado) == true) {
+        fraseIntDec = `o número é inteiro!`;
+    } else {
+        fraseIntDec = `o número é decimal!`;
+    }
     //SAÍDA
+
+    alert(fraseResultado + "Características do resultado:" + fraseParImpar + frasePosNeg + fraseIntDec)
 
 </script>
