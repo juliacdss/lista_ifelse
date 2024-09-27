@@ -14,7 +14,7 @@
     let altura = Number(prompt(`Informe sua altura (em metros):`));
 
     // PROCESSAMENTO
-    const imc = peso / (altura ** 2);
+    const imc = peso / altura ** 2;
     let categoria;
 
     if (imc <= 18.5) {
@@ -28,6 +28,6 @@
     }
 
     // SAÍDA
-    alert(`Seu IMC é: ${imc.toFixed(2)}, Categoria: ${categoria}`);
+    alert(`Seu IMC é: ${imc.toFixed(2)}, categoria: ${categoria}.`);
     
 </script>
